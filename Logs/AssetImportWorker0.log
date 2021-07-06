@@ -4170,3 +4170,61 @@ Received Import Request.
 Start importing Assets/Audio using Guid(79b2311c78aacab4fb70092e5c08703c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '349ba5c8e68d9717a78678d5bced099c') in 0.003040 seconds 
   Import took 0.009953 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013172 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for Lumin target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.931 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2233 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 3102.
+Total: 8.039200 ms (FindLiveObjects: 0.879100 ms CreateObjectMapping: 0.938100 ms MarkObjects: 5.784000 ms  DeleteObjects: 0.436300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4327.460296 seconds.
+  path: Assets/Audio/476740__cjdeets__shot-scifi-powerdown.wav
+  artifactKey: Guid(a5be3e5643f673245846d41be6a7f0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/476740__cjdeets__shot-scifi-powerdown.wav using Guid(a5be3e5643f673245846d41be6a7f0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdff0d8af915e83cf98ca1a5e0d92c52') in 0.243633 seconds 
+  Import took 0.249199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.484679 seconds.
+  path: Assets/Prefabs/CTH PREFAB/Bullet.prefab
+  artifactKey: Guid(96ae8f9dd8fd89941bc4d858375f035b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CTH PREFAB/Bullet.prefab using Guid(96ae8f9dd8fd89941bc4d858375f035b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '740076b42cfa6c720d54d0c00feb5fcb') in 0.059386 seconds 
+  Import took 0.065259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.590316 seconds.
+  path: Assets/Animation/Cth Animasi/EnemyDeath
+  artifactKey: Guid(8f60d61f4754326439fae0de2dbfa19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Cth Animasi/EnemyDeath using Guid(8f60d61f4754326439fae0de2dbfa19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be274c14bc4e4de398689fadd9ddb285') in 0.011429 seconds 
+  Import took 0.018229 seconds .
+
