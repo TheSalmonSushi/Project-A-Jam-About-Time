@@ -1,0 +1,10 @@
+[api-updater (non-obsolete-error-filter)] 7/5/2021 1:57:56 AM : Starting D:/Program Files/OWH MA GAD UNITY/2020.3.12f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1050.5624ms
+moved types parse time: 65ms
+candidates parse time : 1ms
+C# parse time         : 710ms
+candidates check time : 43ms
+console write time    : 1ms
+
