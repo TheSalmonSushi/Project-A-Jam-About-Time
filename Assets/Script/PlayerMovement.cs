@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public KeyCode JumpBoay;
     [SerializeField] public KeyCode UBetterCrouch;
     
-    
 
     public CharaController2d controller;
     public Animator animator;
@@ -18,9 +17,17 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
 
-    // Update is called once per frame
-    void Update () {
+    
 
+    // Update is called once per frame
+    void Update () 
+    {
+        ProcessMovement();
+
+    }
+
+    public void ProcessMovement()
+    {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -38,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+                
 
     }
 
