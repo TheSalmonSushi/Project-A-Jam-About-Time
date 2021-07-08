@@ -31,6 +31,7 @@ public class CharaController2d : MonoBehaviour
    
    	public BoolEvent OnCrouchEvent;
    	private bool m_wasCrouching = false;
+    public Transform avatar2;
    
    	private void Awake()
    	{
@@ -117,13 +118,15 @@ public class CharaController2d : MonoBehaviour
    			{
    				// ... flip the player.
    				Flip();
-   			}
+                avatar2.transform.localScale = new Vector3(4, 4, 4);
+            }
    			// Otherwise if the input is moving the player left and the player is facing right...
    			else if (move < 0 && m_FacingRight)
    			{
    				// ... flip the player.
    				Flip();
-   			}
+                avatar2.transform.localScale = new Vector3(-4, 4, 4);
+            }
    		}
    		// If the player should jump...
    		if (m_Grounded && jump)
