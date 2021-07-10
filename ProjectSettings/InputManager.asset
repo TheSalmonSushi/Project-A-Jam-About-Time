@@ -486,11 +486,11 @@ InputManager:
     axis: 5
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Crouch
+    m_Name: SlowMotion
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: s
+    positiveButton: 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

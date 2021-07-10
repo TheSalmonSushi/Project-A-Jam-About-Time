@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyInfo : MonoBehaviour
+public class PatrolingEnemyInfo : MonoBehaviour
 {
     [SerializeField] public AudioClip ExplodeSound;
     [SerializeField] private float DeathDelay;
@@ -13,8 +13,7 @@ public class EnemyInfo : MonoBehaviour
     public AudioSource newAudiosource;
     public SpriteRenderer rend;
     public BoxCollider2D coliderboss;
-    public BoxCollider2D coliderboss2;
-    public GameObject parent;
+   
     
 
     void Start()
@@ -58,13 +57,11 @@ public class EnemyInfo : MonoBehaviour
         newAudiosource.PlayOneShot(ExplodeSound, 1f);  // plays sound when collided.
         rend.enabled = false; // sets to false if hit.
         coliderboss.enabled = false; // disable box collider
-        coliderboss2.enabled = false;
     }
 
     void DestroyEnemy()
     {
-        Destroy(parent);
         Destroy(gameObject); 
-        
+       
     }
 }

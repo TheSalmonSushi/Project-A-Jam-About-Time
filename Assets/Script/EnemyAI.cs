@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public Rigidbody2D rigidbodai;
     public Seeker parapencariplayer;
     public Transform TheEnemy;
+    public int damage;
 
     private Path pathtoheaven;
     private int currentwaypoint = 0;
@@ -26,6 +27,16 @@ public class EnemyAI : MonoBehaviour
     void FixedUpdate()
     {
         PathProcess();
+    }
+    
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        PlayerHealth player = hitInfo.GetComponent<PlayerHealth>();
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+        }
+        
     }
 
     void PathGenerator()

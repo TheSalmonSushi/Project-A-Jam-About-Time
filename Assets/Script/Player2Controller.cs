@@ -19,7 +19,7 @@ public class Player2Controller : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
         if (Input.GetKey(jump)&& m_Grounded)
         {
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce ), ForceMode2D.Impulse);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

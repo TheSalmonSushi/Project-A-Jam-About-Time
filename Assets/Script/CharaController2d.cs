@@ -121,7 +121,7 @@ public class CharaController2d : MonoBehaviour
    				// ... flip the player.
    				Flip();
                 avatar2.transform.localScale = new Vector3(2, 2, 2);
-              
+
             }
    			// Otherwise if the input is moving the player left and the player is facing right...
    			else if (move < 0 && m_FacingRight)
@@ -129,7 +129,7 @@ public class CharaController2d : MonoBehaviour
    				// ... flip the player.
    				Flip();
                 avatar2.transform.localScale = new Vector3(-2, 2, 2);
-                
+
             }
    		}
    		// If the player should jump...
@@ -137,7 +137,7 @@ public class CharaController2d : MonoBehaviour
    		{
    			// Add a vertical force to the player.
    			m_Grounded = false;
-   			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+   			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce) ,ForceMode2D.Impulse);
    		}
    	}
    

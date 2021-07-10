@@ -22,8 +22,13 @@ public class SwitchCharacterScript : MonoBehaviour {
     {
         avatar1.gameObject.SetActive(true);
         avatar2.gameObject.SetActive(true);
+
         avatar2.transform.position = new Vector3(avatar1.transform.position.x - 2f,
                 avatar1.transform.position.y - 0.9f, avatar1.transform.position.z);
+
+        avatar2.transform.position = new Vector3(avatar1.transform.position.x - 1.5f,
+                avatar1.transform.position.y-0.2f, avatar1.transform.position.z);
+
         avatar2.transform.rotation = Quaternion.Euler(0, 0, 0);
         haha();
         

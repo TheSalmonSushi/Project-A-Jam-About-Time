@@ -23,6 +23,12 @@ public class Projectile : MonoBehaviour
              enemy.TakeDamage(damage);
          }
 
+         PatrolingEnemyInfo patrolingEnemy = hitInfo.GetComponent<PatrolingEnemyInfo>();
+         if (patrolingEnemy != null)
+         {
+             patrolingEnemy.TakeDamage(damage);
+         }
+         
         Instantiate(impactEffect, transform.position, transform.rotation);
 
         Destroy(gameObject);
