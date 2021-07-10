@@ -30,12 +30,20 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        //animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        
+        if (horizontalMove != 0)
+        {
+            animator.SetBool("Walk", true);
+        } else
+        {
+            animator.SetBool("Walk", false);
+        }
 
         if (Input.GetKeyDown(JumpBoay))
         {
             jump = true;
-            animator.SetBool("IsJumping", true);
+            //animator.SetBool("IsJumping", true);
         }
 
         if (Input.GetKeyDown(UBetterCrouch))

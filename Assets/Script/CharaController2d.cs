@@ -36,13 +36,13 @@ public class CharaController2d : MonoBehaviour
    	private void Awake()
    	{
    		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-   
-   		if (OnLandEvent == null)
-   			OnLandEvent = new UnityEvent();
-   
-   		if (OnCrouchEvent == null)
-   			OnCrouchEvent = new BoolEvent();
-   	}
+
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
+
+        if (OnCrouchEvent == null)
+            OnCrouchEvent = new BoolEvent();
+    }
    
    	private void FixedUpdate()
    	{
@@ -66,50 +66,52 @@ public class CharaController2d : MonoBehaviour
    
    	public void Move(float move, bool crouch, bool jump)
    	{
-   		// If crouching, check to see if the character can stand up
-   		if (!crouch)
+        //If crouching, check to see if the character can stand up
+
+        if (!crouch)
+        {
+            // If the character has a ceiling preventing them from standing up, keep them crouching
+            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+            {
+                crouch = true;
+            }
+        }
+
+        //only control the player if grounded or airControl is turned on
+        if (m_Grounded || m_AirControl)
    		{
-   			// If the character has a ceiling preventing them from standing up, keep them crouching
-   			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-   			{
-   				crouch = true;
-   			}
-   		}
-   
-   		//only control the player if grounded or airControl is turned on
-   		if (m_Grounded || m_AirControl)
-   		{
-   
-   			// If crouching
-   			if (crouch)
-   			{
-   				if (!m_wasCrouching)
-   				{
-   					m_wasCrouching = true;
-   					OnCrouchEvent.Invoke(true);
-   				}
-   
-   				// Reduce the speed by the crouchSpeed multiplier
-   				move *= m_CrouchSpeed;
-   
-   				// Disable one of the colliders when crouching
-   				if (m_CrouchDisableCollider != null)
-   					m_CrouchDisableCollider.enabled = false;
-   			} else
-   			{
-   				// Enable the collider when not crouching
-   				if (m_CrouchDisableCollider != null)
-   					m_CrouchDisableCollider.enabled = true;
-   
-   				if (m_wasCrouching)
-   				{
-   					m_wasCrouching = false;
-   					OnCrouchEvent.Invoke(false);
-   				}
-   			}
-   
-   			// Move the character by finding the target velocity
-   			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+
+            // If crouching
+            if (crouch)
+            {
+                if (!m_wasCrouching)
+                {
+                    m_wasCrouching = true;
+                    OnCrouchEvent.Invoke(true);
+                }
+
+                // Reduce the speed by the crouchSpeed multiplier
+                move *= m_CrouchSpeed;
+
+                // Disable one of the colliders when crouching
+                if (m_CrouchDisableCollider != null)
+                    m_CrouchDisableCollider.enabled = false;
+            }
+            else
+            {
+                // Enable the collider when not crouching
+                if (m_CrouchDisableCollider != null)
+                    m_CrouchDisableCollider.enabled = true;
+
+                if (m_wasCrouching)
+                {
+                    m_wasCrouching = false;
+                    OnCrouchEvent.Invoke(false);
+                }
+            }
+
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
    			// And then smoothing it out and applying it to the character
    			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
    
@@ -118,14 +120,16 @@ public class CharaController2d : MonoBehaviour
    			{
    				// ... flip the player.
    				Flip();
-                avatar2.transform.localScale = new Vector3(4, 4, 4);
+                avatar2.transform.localScale = new Vector3(2, 2, 2);
+              
             }
    			// Otherwise if the input is moving the player left and the player is facing right...
    			else if (move < 0 && m_FacingRight)
    			{
    				// ... flip the player.
    				Flip();
-                avatar2.transform.localScale = new Vector3(-4, 4, 4);
+                avatar2.transform.localScale = new Vector3(-2, 2, 2);
+                
             }
    		}
    		// If the player should jump...
